@@ -1,2 +1,3 @@
-# tomster-scripts
-Tomster.io build scripts
+# Tomster build scripts
+
+Not much to see here.
