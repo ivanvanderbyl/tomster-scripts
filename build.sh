@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# NOTICE: This build script is largely borrowed from buildkite.com, possibly the
+# best CI service out there.
+
 # Causes this script to exit if a variable isn't present
 set -u
 
