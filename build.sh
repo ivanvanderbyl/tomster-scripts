@@ -102,8 +102,9 @@ tomster-run "bower --allow-root --silent install"
 echo '--- Configuring app for Tomster deployment'
 tomster-run "mkdir -p /opt/app/config/deploy/"
 tomster-run "cp -f /opt/setup/production.js /opt/app/config/deploy/production.js"
-tomster-run "npm uninstall ember-cli-deploy"
-tomster-run "npm install ivanvanderbyl/ember-cli-deploy"
+tomster-run "npm uninstall ember-cli-deploy --save-dev"
+tomster-run "npm install ivanvanderbyl/ember-cli-deploy --save-dev"
+tomster-run "pwd"
 
 echo '--- Building...'
 tomster-run "ember build --environment=production"
