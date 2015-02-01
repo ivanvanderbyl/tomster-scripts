@@ -57,6 +57,12 @@ echo '--- Preparing build workspace'
 tomster-run "mkdir -p /opt/app"
 tomster-run "cd /opt/app"
 
+if [[ "$TOMSTER_DEBUG" == "true" ]]; then
+  echo '--- Build environment variables'
+
+  tomster-run "env | grep TOMSTER | sort"
+fi
+
 # Do we need to do a git checkout?
 if [[ ! -d ".git" ]]; then
   tomster-run "git clone \"$CLONE_URL\" . -qv"
