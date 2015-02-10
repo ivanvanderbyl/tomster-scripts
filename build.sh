@@ -26,6 +26,7 @@ function tomster-run {
   EVAL_EXIT_STATUS=$?
 
   if [[ $EVAL_EXIT_STATUS -ne 0 ]]; then
+    echo -e "$TOMSTER_PROMPT command $1 exited with status $EVAL_EXIT_STATUS"
     exit $EVAL_EXIT_STATUS
   fi
 }
@@ -101,9 +102,9 @@ tomster-run "git submodule foreach --recursive git reset --hard"
 ##############################################################
 
 echo '--- Running npm install'
-tomster-run "npm install --silent"
+tomster-run "npm install"
 echo '--- Running bower install'
-tomster-run "bower --allow-root --silent install"
+tomster-run "bower --allow-root install"
 
 echo '--- Configuring app for Tomster deployment'
 tomster-run "mkdir -p /opt/app/config/deploy/"
