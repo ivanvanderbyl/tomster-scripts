@@ -102,6 +102,7 @@ tomster-run "git submodule foreach --recursive git reset --hard"
 ##############################################################
 
 echo '--- Running npm install'
+tomster-run "npm config set spin=false"
 tomster-run "npm install"
 echo '--- Running bower install'
 tomster-run "bower --allow-root install"
